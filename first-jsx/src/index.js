@@ -4,14 +4,15 @@ import ReactDOM from 'react-dom'; // import the ReactDOM library
 // const App = React.createElement("h1", null, "Hello World");
 
 // with JSX we can perform the same React.createElement() call with the following:
-const App = (props) => {
+/*const App = (props) => {
     return (
         <div class="jumbotron">
             <h1>Hello Dojo</h1>
             <p>Now we are getting somewhere!</p>
         </div>
     );
-}
+}*/
+import App from './components/App';
 
 // and load our App into the DOM, targeting the div located in /public/index.html
 ReactDOM.render(<App />, document.getElementById('root'));
