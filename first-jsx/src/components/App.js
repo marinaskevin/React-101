@@ -6,12 +6,11 @@ import './App.css';
 const App = (props) => {
     return (
         <div>
-            <h1>Here's our fancy App.</h1>
-            <p>Hey pretty cool!</p>
-            <Title />
-            <Title />
-            <Title />
+            <Title text="Title One" color="red" isImportant={true} />
+            <Title text="Title One" color="green" isImportant={false} />
+            <Title text="Title One" color="orange" isImportant={false} />
         </div>
     );
 };
+
 export default App;
