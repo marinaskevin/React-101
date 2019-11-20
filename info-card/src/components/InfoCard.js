@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import MessageButton from './Button';
 
 const InfoCard = (props) => {
   return (
@@ -8,6 +8,7 @@ const InfoCard = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.description}</p>
+        <MessageButton pet={props.title} sound={props.sound}/>
       </div>
     </div>
   );
