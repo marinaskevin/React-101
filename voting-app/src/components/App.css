@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.container > .list-group {
+  max-width: 400px;
+}
+
+body {
+  background: linear-gradient(#EE9,#9EE);
+  padding: 20px;
+  height: calc(100vh);
+}
+
+.rounded-circle {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
