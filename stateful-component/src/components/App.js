@@ -12,6 +12,10 @@ class App extends React.Component {
         return (
             <div>
                 <h1>{this.state.text}</h1>
+                <button
+                    onClick={ () => this.setState({ text: 'State has changed!' }) } >
+                    Click to change state's text value!
+                </button>
             </div>
         )
     }
