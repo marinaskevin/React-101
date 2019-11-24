@@ -12,10 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Counter name="Inky" imagePath="images/Inky.jpg" />
-        <Counter name="Blinky" imagePath="images/Blinky.jpg" />
-        <Counter name="Pinky" imagePath="images/Pinky.jpg" />
-        <Counter name="Clyde" imagePath="images/Clyde.jpg" />
+        <Counter name="Inky" imagePath="images/Inky.gif" />
+        <Counter name="Blinky" imagePath="images/Blinky.gif" />
+        <Counter name="Pinky" imagePath="images/Pinky.gif" />
+        <Counter name="Clyde" imagePath="images/Clyde.gif" />
       </div>
     )
   }
