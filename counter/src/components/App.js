@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div>
         <Counter name="Inky" imagePath="images/Inky.gif" />
         <Counter name="Blinky" imagePath="images/Blinky.gif" />
         <Counter name="Pinky" imagePath="images/Pinky.gif" />
