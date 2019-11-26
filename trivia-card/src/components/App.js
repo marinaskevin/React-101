@@ -1,16 +1,24 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
-import InfoCard from './InfoCard';
+import TriviaCard from './TriviaCard';
 
-const App = (props) => {
-  return (
-    <div className="container text-center">
-      <h1>Pets</h1>
-      <InfoCard title="Cat" sound="Meow!" description="A usually quiet, often shy creature" imagePath="./images/cat.jpg" />
-      <InfoCard title="Dog" sound="Woof!" description="A usually sociable, often protective creature" imagePath="./images/dog.jpg" />
-      <InfoCard title="Bird" sound="Chirp!" description="A light-feathered creature that loves to fly" imagePath="./images/bird.jpg" />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+  render() {
+    return (
+      <div className="container text-center">
+        <h1>Pets</h1>
+        <TriviaCard title="Name that Animal!" question="What goes meow?" hint="A usually quiet, often shy creature" imagePath="./images/cat.jpg" />
+        <TriviaCard title="Name that Animal!" question="What goes woof?" hint="A usually sociable, often protective creature" imagePath="./images/dog.jpg" />
+        <TriviaCard title="Name that Animal!" question="What goes chirp?" hint="A light-feathered creature that loves to fly" imagePath="./images/bird.jpg" />
+      </div>
+    );
+  }
 };
 
 export default App;
