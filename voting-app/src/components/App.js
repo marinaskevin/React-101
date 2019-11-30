@@ -1,19 +1,27 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 import Library from './Library';
 
-const App = (props) => {
-  return (
-    <div className="container text-center">
-      <h1>Vote Your Favorite JS Library</h1>
-      <ul className="list-group mx-auto">
-        <Library name="React" votes="15"/>
-        <Library name="Vue" votes="12"/>
-        <Library name="Angular" votes="9"/>
-        <Library name="Ember" votes="3"/>
-      </ul>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+  render() {
+    return (
+      <div className="container text-center">
+        <h1>Vote Your Favorite JS Library</h1>
+        <ul className="list-group mx-auto">
+          <Library name="React"/>
+          <Library name="Vue"/>
+          <Library name="Angular"/>
+          <Library name="Ember"/>
+        </ul>
+      </div>
+    );
+  }
 };
 
 export default App;
