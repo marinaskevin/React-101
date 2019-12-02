@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
+import List from './list/List';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,9 +15,10 @@ class App extends React.Component {
     }, 2000);
   }
   render(){
+    let users = ["Eddy", "Brendan", "Goose", "Eli", "Marcos"];
     return (
-      <div>
-        <h1>{this.state.time}</h1>
+      <div className="container">
+        <List users={users} loggedIn="Goose" />
       </div>
     )
   }
