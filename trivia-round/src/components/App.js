@@ -32,7 +32,55 @@ const testQuestion = {
       }
     ]
 };
-const App = (props) => {
-	return <TriviaRound question={testQuestion} />;
+
+class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        score: 0,
+        time: 0,
+        timer: null,
+        hintRevealed: false,
+        answered: false
+      };
+      this.timer = this.timer.bind(this);
+    }
+    onRightAnswer(hintRevealed) {
+      if(this.state.answered) return;
+      this.setState({ hintRevealed: hintRevealed, answered: true });
+      clearInterval(this.state.timer);
+      document.getElementById("correct").classList.remove("d-none");
+    }
+    onWrongAnswer(hintRevealed) {
+      if(this.state.answered) return;
+      this.setState({ hintRevealed: hintRevealed, answered: true });
+      clearInterval(this.state.timer);
+      document.getElementById("wrong").classList.remove("d-none");
+    }
+    componentDidMount() {
+      this.setState({timer: setInterval(this.timer, 1000)});
+    }
+    timer() {
+      this.setState(prevState => ({time: prevState.time + 1}));
+    }
+    render() {
+      var hintDeduct = this.state.hintRevealed ? -1 : 0;
+      var timeDeduct = this.state.time > 10 ? -2 : 0;
+      timeDeduct = this.state.time > 20 ? timeDeduct-2 : timeDeduct;
+      return (
+        <div className="text-center">
+          <div className="float-left"><h1>{this.state.time}</h1></div>
+          <TriviaRound question={testQuestion} onRightAnswer={ (hintRevealed) => this.onRightAnswer(hintRevealed) } onWrongAnswer={ (hintRevealed) => this.onWrongAnswer(hintRevealed) }/>
+          <div id="correct" class="d-none">
+            <h1>Correct! Score +{5+timeDeduct+hintDeduct}</h1>
+            <button className="btn btn-primary">Next Question</button>
+          </div>
+          <div id="wrong" class="d-none">
+            <h1>Wrong!</h1>
+            <button className="btn btn-primary">Next Question</button>
+          </div>
+        </div>
+      );
+    }
 };
 export default App;
